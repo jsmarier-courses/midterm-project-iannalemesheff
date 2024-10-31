@@ -1,11 +1,13 @@
-**Date**<br>
-**Course Code & Course Name**<br>
-**Student's First Name & Last Name**<br>
+**2024-11-04**<br>
+**MPAD2003A Introductory Data Storytelling**<br>
+**Ianna Lemesheff**<br>
 **Presented to Jean-Sébastien Marier**<br>
+
+repo link: https://github.com/jsmarier-courses/midterm-project-iannalemesheff
 
 # Midterm Project: Exploratory Data Analysis (EDA)
 
-Use one hashtag symbol (`#`) to create a level 1 heading like this one.
+<!-- Use one hashtag symbol (`#`) to create a level 1 heading like this one. -->
 
 ## Foreword
 
@@ -24,9 +26,42 @@ And to create an unordered list, we simply put a star (`*`) before each item.
 
 ## 1. Introduction
 
-Insert text here.
+I will be analyzing a dataset collected by the City of Ottawa, which provides a summary of service requests made to the city in the year 2024. According to their website, the data was collected from 311 calls, the client service centre and an online self-service portal. Noteable data categories include:
+* The category of the request
+* Description of the request
+* Dates of the request
+* Status of the request
+
+Data sources:
+[2024 Service Requests (City of Ottawa)](https://open.ottawa.ca/documents/65fe42e2502d442b8a774fd3d954cac5/about)
+[Jean-Sebastien Marier's .csv file](https://raw.githubusercontent.com/jsmarier/course-datasets/refs/heads/main/ottawa-311-service-requests-august-2024.csv)
+
 
 ## 2. Getting Data
+
+To start, import your data into Google Sheets following these steps:
+1. File > Import
+1. Upload your .csv file from your computer.
+1. Import Location: Choose where you want your new spreadsheet to be imported. 
+1. Separator Type: Since we are working with a .csv (comma-separated values), pick commas as your separators.
+1. Hit the Import Data button.
+
+Your spreadsheet should look like this.
+
+![](getting-data.png)<br>
+*Figure 1: The spreadsheet when imported.*
+
+Columns: 11
+Rows: 28,539
+
+The newly imported spreadsheet does not look very nice. At first glance, columns are not wide enough and it is hard to identify the column labels.
+
+[Link to my sample spreadsheet](https://docs.google.com/spreadsheets/d/1ZEO05kqe66DBUfp4FLY0f9Z0KFAh6NdQquYK_CJBdo8/edit?usp=sharing)
+
+You will notice that my spreadsheet looks quite different compared to the picture. That is because I cleaned it. I will explain my cleaning techniques in the upcoming section.
+
+
+
 
 Use two hashtag symbols (`##`) to create a level 2 heading like this one.
 
