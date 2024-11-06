@@ -62,8 +62,8 @@ You will notice that my spreadsheet looks quite different compared to the pictur
 
 **Some observations about the data:**
 * Column B features the status of the service request as nominal data*. The three categories included are: resolved, active, and cancelled.
-* Column C features the type of service request made by the complainant. This is again, categorical nominal data, with more categories listed this time. The categories of service requests include: bylaw services, citizen services, city facilities, garbage & recycling, health & safety, licenses and permits, parking control enforcement, recreation & culture, roads & transportation, social community service, and water & the environment.
-* Column J features the ward in which the service request was made. Despite the data being a range of numbers, it is still categorical nominal data, as each number is just a stand in for the ward name. Wards range from 1-24.
+* Column C features the type of service request made by the complainant. This is again, nominal data, with more categories listed this time. The categories of service requests include: bylaw services, citizen services, city facilities, garbage & recycling, health & safety, licenses and permits, parking control enforcement, recreation & culture, roads & transportation, social community service, and water & the environment.
+* Column J features the ward in which the service request was made. Despite the data being a range of numbers, it is still nominal data, as each number is just a stand in for the ward name. Wards range from 1-24.
 * Column H & I detail the latitude and longitude of the location related to the complaint. Both variables are continuous values.**
 
 ***Nominal data** is a form of categorical data. It is described as non-quantifiable data that does not have an order associated with it.
@@ -72,7 +72,7 @@ You will notice that my spreadsheet looks quite different compared to the pictur
 
 Some data is missing in the table. The columns that have missing data appear to be location data. Some requests are missing addresses and therefore coordinates and ward info. However, some requests have the address/coordinates recorded but do not have the ward filled in. This can be quickly fixed manually by searching up the ward of each address.
 
-A question I have asked myself while skimming through the data is: which ward has the most complaints? Does the number of complaints reflect the population... or does it indicate something else? Perhaps the city councillors are neglecting their ward OR there could be higher community involvement in the area OR a higher rate of delinquency. It could also be a combination of these factors. I will attempt to identify the reason, if any.
+A question I have asked myself while skimming through the data is: which ward has the most complaints? Does the number of complaints reflect the population... or does it indicate something else? Perhaps the city councillors are neglecting their ward OR there could be higher community involvement in the area OR a higher rate of delinquency. It could also be a combination of these factors, or none of them. I will attempt to identify the reason and how I can create a story.
 
 ## 3. Understanding Data
 
@@ -96,7 +96,7 @@ Here are some methods I used to clean the spreadsheet:
 * **Adjusting column width.** This allows all of the content in the cells to be easily readable, as well as condensing other columns so that more data is visible on the screen at once.
 * **Manual cleaning.** I went in and added the missing ward numbers by searching the addresses on [this map](https://data.mapchannels.com/mc3/1369/ottawawards_1369.htm?v=20110211021742).
 * **Find and replace.** I used this to display the names of the wards along with the numbers. For example, I would find 1 and change it to 1/Orleans East-Cumberland. Make sure to select "Match entire cell contents". Having the ward names written down in the dataset is good for easy reference.
-* **SPLIT.** I used this to split the numbers and names of the wards between the / symbol. I thought keeping the numbers of the wards was important for organization. The formula I used was `=SPLIT(J:J,"/")`. Make sure to cut and paste the new columns as values only before you delete the old column.
+* **SPLIT.** I used this to split the numbers and names of the wards between the / symbol. I thought keeping the numbers of the wards was important for organization. The formula I used was `=SPLIT(J:J,"/")`. Make sure to cut and paste the new columns as values only before you delete the old column. If you do not, the column will not be able to be displayed without its reference.
 * **Delete french text.** You can do this manually in row 1. Use SPLIT to divide the Description column (D). I used the formula `=SPLIT(D:D,"|")`.
 * **Delete extra columns.** I deleted Latitude/Longitude because I found that they were unnecessary with the inclusion of the address category. I also deleted the Channel category as it will not be needed for my analysis.
 
@@ -132,40 +132,34 @@ Next, I must try and answer my question by using this table and chart. More spec
 
 ## 4. Potential Story
 
-To tell my story about Rideau-Vanier and Somerset, I first need to find some extra information.
+To tell my story about Rideau-Vanier and Somerset, I first need to find some extra information. For example...
 * What is the population of these wards relative to the rest of Ottawa?
 * Is there a higher crime rate in these areas?
 * What are the personal accounts of residents who live in these areas? Do they agree with the type of requests made?
 
 I could also create new charts specific to the wards to make new connections. For example, I could create a chart that shows the frequescy of each type of request made in these two wards, to determine which problems it faces the most.
 
-[This chart](https://ottawa.ca/en/living-ottawa/statistics-and-demographics/current-population-and-household-estimates#section-f580706c-6d2d-41eb-9977-34b60d1e633f) on the City of Ottawa website details the population of each ward. At first glance, neither Rideau or Somerset have the highest populations. This can indicate that there is a higher volume of problems in the area. One could infer that as these areas are located in/nearby the downtown core, that there is a higher number of visitors, a higher number of people living on the streets, a higher number of pollution, noise, etc. All of these are issues that people bring up to bylaw.
+[This chart](https://ottawa.ca/en/living-ottawa/statistics-and-demographics/current-population-and-household-estimates#section-f580706c-6d2d-41eb-9977-34b60d1e633f) on the City of Ottawa website details the population of each ward. At first glance, neither Rideau or Somerset have the highest populations. This indicates that there is a higher volume of complaints in the area relative to Ottawa's population. One could infer that as these areas are located in/nearby the downtown core, that there is a higher number of visitors, a higher number of people living on the streets, a higher population density (more interactions among people), a higher number of pollution, noise, etc. These factors can lead to more complaints, evidently due to the nature of dense metropolitan areas - which encourage more people to interact with their community as opposed to suburbs located farther away from downtown.
 
-[This article](https://ottawa.ctvnews.ca/these-ottawa-wards-had-the-highest-and-lowest-crime-rates-in-2022-1.6454631#:~:text=There%20were%203%2C160%20crimes%20per,Rideau-Rockcliffe%20and%20Alta%20Vista.) by CTV News states that both these wards have the highest crime rates in Ottawa per 100,000 residents. This is another lead to our story.
+[This article](https://ottawa.ctvnews.ca/these-ottawa-wards-had-the-highest-and-lowest-crime-rates-in-2022-1.6454631#:~:text=There%20were%203%2C160%20crimes%20per,Rideau-Rockcliffe%20and%20Alta%20Vista.) by CTV News states that both these wards have the highest crime rates in Ottawa per 100,000 residents. This is another lead to our story. Are higher crime rates and higher rates of service requests correlated? What factors lead to this statistics? (ex. drug use, income inequality, etc.)
 
-Finally, interviewing residents and frequent visitors in these areas will help us paint a more detailed and personal story, supported by quotes. Otherwise, more research must be done to find reliable sources provided by city services such as the Ottawa Police and Ottawa by-law services. This story could help us bring pressing issues to the attention of city councillors Stephanie Plante and Ariel Troster and improve the lives of Ottawa citizens.
+Finally, interviewing residents and frequent visitors in these areas will help us paint a more detailed and personal story, supported by quotes. Otherwise, more research must be done to find reliable sources such as open data, local journalism pieces, etc. This story could help us bring pressing issues to the attention of city councillors Stephanie Plante and Ariel Troster and improve the lives of those who frequent Rideau-Vanier and Somerset.
 
 ## 5. Conclusion
 
-What I found most challenging about this assignment was cleaning the data. It was the most time-consuming task. There was a lot of data, however this task was made easier by the fact that it was already relatively clean.
+What I found most challenging about this assignment was cleaning the data. It was the most time-consuming task. There was a lot of columns, however this task was made easier by the fact that it was already relatively clean. Sorting columns from A-Z proved very helpful.
 
-What I found the most rewarding was discovering that my story/hypothesis could actually work with a little more research. It makes me feel like open data is a powerful tool for discovering new stories.
+What I found the most rewarding was discovering that my story/hypothesis could actually work with a little more research. It makes me feel like open data is a powerful resource for discovering new stories to tell.
 
-I realized that I truthfully do not know much about how the municipal government functions. In order for me to tell a quality story, I must understand exactly what city councillors do and what their role is in addressing complaints, crime, etc.
+I realized that I truthfully do not know much about how the municipal government functions. In order for me to tell a quality story, I must understand exactly what city councillors do and what their role is in addressing complaints, crime, etc. Therefore, I must do extensive research into our local politics.
 
 Next time, I will work on my procedural writing skills and include more screenshots in order to create a comprehensive tutorial that absolute beginners could use to analyze datasets.
 
 ## 6. References
 
-https://www150.statcan.gc.ca/n1/edu/power-pouvoir/toc-tdm/5214718-eng.htm
 
-https://www.statcan.gc.ca/en/wtc/data-literacy/catalogue/892000062020008
+Statistics Canada. (2021). *Statistics: Power from Data!* https://www150.statcan.gc.ca/n1/edu/power-pouvoir/toc-tdm/5214718-eng.htm
 
-https://learning.oreilly.com/library/view/the-truthful-art/9780133440492/
+Statistics Canada. (2020). *Data Accuracy and Validation: Methods to ensure the quality of data.* https://www.statcan.gc.ca/en/wtc/data-literacy/catalogue/892000062020008
 
-
-Include a list of your references here. Please follow [APA guidelines for references](https://apastyle.apa.org/style-grammar-guidelines/references). Hanging paragraphs aren't required though.
-
-**Here's an example:**
-
-Bounegru, L., & Gray, J. (Eds.). (2021). *The Data Journalism Handbook 2: Towards A Critical Data Practice*. Amsterdam University Press. [https://ocul-crl.primo.exlibrisgroup.com/permalink/01OCUL_CRL/hgdufh/alma991022890087305153](https://ocul-crl.primo.exlibrisgroup.com/permalink/01OCUL_CRL/hgdufh/alma991022890087305153)
+Cairo, M. (2016). *The Truthful Art: Data, Charts, and Maps for Communication.* New Riders. https://learning.oreilly.com/library/view/the-truthful-art/9780133440492/
