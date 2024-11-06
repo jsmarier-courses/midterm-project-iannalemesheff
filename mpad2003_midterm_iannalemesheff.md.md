@@ -132,7 +132,7 @@ Next, I must try and answer my question by using this table and chart. More spec
 
 ## 4. Potential Story
 
-To tell my story about Rideau-Vanier and Somerset, I first need to find some extra information. For example...
+To tell my story about Rideau-Vanier and Somerset, I first need to find some extra information. For example:
 * What is the population of these wards relative to the rest of Ottawa?
 * Is there a higher crime rate in these areas?
 * What are the personal accounts of residents who live in these areas? Do they agree with the type of requests made?
