@@ -32,7 +32,7 @@ I will be analyzing a dataset collected by the City of Ottawa, which provides a 
 * Dates of the request
 * Status of the request
 
-Data sources:
+**Data sources:**
 [2024 Service Requests (City of Ottawa)](https://open.ottawa.ca/documents/65fe42e2502d442b8a774fd3d954cac5/about)
 [Jean-Sebastien Marier's .csv file](https://raw.githubusercontent.com/jsmarier/course-datasets/refs/heads/main/ottawa-311-service-requests-august-2024.csv)
 
@@ -46,7 +46,7 @@ To start, import your data into Google Sheets following these steps:
 1. Separator Type: Since we are working with a .csv (comma-separated values), pick commas as your separators.
 1. Hit the Import Data button.
 
-Your spreadsheet should look like this.
+**Your spreadsheet should look like this.**
 
 ![](getting-data.png)<br>
 *Figure 1: The spreadsheet when imported.*
@@ -60,15 +60,20 @@ The newly imported spreadsheet does not look very nice. At first glance, columns
 
 You will notice that my spreadsheet looks quite different compared to the picture. That is because I cleaned it. I will explain my cleaning techniques in the upcoming section.
 
+**Some observations about the data:**
+* Column B features the status of the service request as nominal data*. The three categories included are: resolved, active, and cancelled.
+* Column C features the type of service request made by the complainant. This is again, categorical nominal data, with more categories listed this time. The categories of service requests include: bylaw services, citizen services, city facilities, garbage & recycling, health & safety, licenses and permits, parking control enforcement, recreation & culture, roads & transportation, social community service, and water & the environment.
+* Column J features the ward in which the service request was made. Despite the data being a range of numbers, it is still categorical nominal data, as each number is just a stand in for the ward name. Wards range from 1-24.
+* Column H & I detail the latitude and longitude of the location related to the complaint. Both variables are continuous values.**
+
+***Nominal data** is a form of categorical data. It is described as non-quantifiable data that does not have an order associated with it.
+****Continuous data** is a form of numeric data. It is a quantifiable form of data that has an infinite amount of values within an interval. (Statistics Canada, 2021)
 
 
+Some data is missing in the table. The columns that have missing data appear to be location data. Some requests are missing addresses and therefore coordinates and ward info. However, some requests have the address/coordinates recorded but do not have the ward filled in. This can be quickly fixed manually by searching up the ward of each address.
 
-Use two hashtag symbols (`##`) to create a level 2 heading like this one.
+A question I have asked myself while skimming through the data is: which ward has the most complaints? Does the number of complaints reflect the population... or does it indicate something else? Perhaps the city councillors are neglecting their ward OR there could be higher community involvement in the area. I will attempt to identify the reason, if any.
 
-To include a screen capture, use the sample code below. Your images should be saved in the same folder as your `.md` file.
-
-![](import-screen-capture.png)<br>
-*Figure 1: The "Import file" prompt on Google Sheets.*
 
 **Here are examples of functions and lines of code put in grey boxes:**
 
@@ -85,15 +90,15 @@ This also shows how to create an ordered list. Simply put `1.` before each item.
 
 ### 3.1. VIMO Analysis
 
-Use three hashtag symbols (`###`) to create a level 3 heading like this one. Please follow this template when it comes to level 1 and level 2 headings. However, you can use level 3 headings as you see fit.
+VIMO stands for Valid, Invalid, Missing, Outlier. Statistics Canada (2020) provides a tutorial on VIMO as an effective list of criteria to determine the general accuracy and quality of a dataset. Let's analyze this spreadsheet using VIMO.
 
-Insert text here.
+**Valid:** All of the columns appear to be valid. For example, all the dates appear to be within a proper range (August 2024). There are up to 24 wards which reflects the wards listed on the City of Ottawa website. etc.
 
-Support your claims by citing relevant sources. Please follow [APA guidelines for in-text citations](https://apastyle.apa.org/style-grammar-guidelines/citations).
+**Invalid:** I have not identified any invalid data in the spreadsheet.
 
-**For example:**
+**Missing:** As previously stated, some rows within the wards column are missing data where the address of the request is known.
 
-As Cairo (2016) argues, a data visualization should be truthful...
+**Outlier:** There do not appear to be any outliers in the data.
 
 ### 3.2. Cleaning Data
 
@@ -122,6 +127,11 @@ Insert text here.
 Insert text here.
 
 ## 6. References
+
+https://www150.statcan.gc.ca/n1/edu/power-pouvoir/toc-tdm/5214718-eng.htm
+
+https://www.statcan.gc.ca/en/wtc/data-literacy/catalogue/892000062020008
+
 
 Include a list of your references here. Please follow [APA guidelines for references](https://apastyle.apa.org/style-grammar-guidelines/references). Hanging paragraphs aren't required though.
 
